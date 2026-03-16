@@ -1,0 +1,89 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:_02_BrushSys="clr-namespace:NovaBrush._02_BrushSys" x:Class="_NovaBrush.MainWindow"
+        xmlns:_03_Hotkeys="clr-namespace:NovaBrush._03_Hotkeys"
+        xmlns:local="clr-namespace:_NovaBrush"
+        mc:Ignorable="d"
+        Title="NovaBrush" Height="720" Width="1280" Background="#FF292929" WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 1st Toolbar -->
+        <Border x:Name="toolbar_top" Grid.Row="0" Background="#FF1E1E1E" Panel.ZIndex="1">
+            <!-- allows hori alignment -->
+            <DockPanel LastChildFill="False">
+                <!-- left buttons -->
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <Button x:Name="btn_File" 
+                    Content="File" 
+                    Width="48" 
+                    Height="26"
+                    Background="#FF202020"
+                    Foreground="White"
+                    BorderBrush="Transparent"
+                    Focusable="False" HorizontalAlignment="Left"/>
+                </StackPanel>
+
+                <!-- right buttons -->
+                <Button x:Name="btn_toolWindow" Content="🔧" 
+                Width="24" 
+                Height="24"
+                DockPanel.Dock="Right"
+                Click="ToggleVisibility_Click"
+                Tag="{Binding ElementName=wnd_Tool}" 
+                Margin="0,0,16,0" Style="{StaticResource NovaToolButton}" Focusable="False"/>
+                <Button x:Name="btn_colorPicker" Content="🎨" 
+                    Width="24"
+                    DockPanel.Dock="Right"
+                    Click="ToggleVisibility_Click"
+                    Tag="{Binding ElementName=wnd_colorPicker}" 
+                    Style="{StaticResource NovaToolButton}" Focusable="False" Height="24" Margin="0,0,2,0"/>
+            </DockPanel>
+        </Border>
+
+        <Border x:Name="toolbar_brush" Grid.Row="1" Background="#FF1E1E1E" Panel.ZIndex="1">
+            <DockPanel LastChildFill="False">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <Button x:Name="btn_open" Content="Open" Width="48" Height="26" Background="#FF202020" Foreground="White" BorderBrush="Transparent" Focusable="False" HorizontalAlignment="Left" Click="btn_open_Click"/>
+                    <Button x:Name="btn_save" Content="Save" Width="48" Height="26" Background="#FF202020" Foreground="White" BorderBrush="Transparent" Focusable="False" HorizontalAlignment="Left" Click="btn_save_Click" />
+                    <TextBlock x:Name="lbl_brushsize" Tag="Size" Text="Size: {0}px" Width="73" Height="16" Background="#FF202020" Foreground="White" Focusable="False" Margin="8,0,0,0" Loaded="showOnLoad"/>
+                    <Slider x:Name="sdr_brushsize" Height="18" Background="#FF202020" Foreground="White" Focusable="False" Width="128" ValueChanged="sdr_brushsize_ValueChanged" Margin="8,0,0,0" Maximum="50" SmallChange="4" TickFrequency="4" LargeChange="2" Minimum="1" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight"/>
+                    <TextBlock x:Name="lbl_aa" Width="55" Height="16" Background="#FF202020" Foreground="White" Focusable="False" Loaded="showOnLoad" Margin="8,0,0,0"/>
+                    <Button x:Name="btn_AA" Content="⬛" Width="24" Height="24" DockPanel.Dock="Right" Margin="0,0,16,0" Style="{StaticResource NovaToolButton}" Focusable="False" Click="btn_AA_Click"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+
+
+        <!-- Canvas -->
+        <Canvas Grid.Row="2" 
+                x:Name="MainCanvas" 
+                Background="#FF444444"
+                RenderTransformOrigin="0,0" Margin="0,0,0,30">
+            <_02_BrushSys:ToolWindow x:Name="wnd_Tool" Canvas.Left="1200" Canvas.Top="46" HorizontalAlignment="Center" Height="288" VerticalAlignment="Top" Panel.ZIndex="1"/>
+            <_03_Hotkeys:ColorPicker x:Name="wnd_colorPicker" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Height="128" Panel.ZIndex="1" Canvas.Left="1008" Canvas.Top="339"/>
+            <Rectangle x:Name="ui_CheckerboardPattern"/>
+        </Canvas>
+
+        <Border x:Name="toolbar_bottom" Grid.Row="2" 
+                Background="#1E1E1E" 
+                Height="30" Panel.ZIndex="1" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbl_MousePos" Text="dummy" Foreground="White" Height="16" Width="95" VerticalAlignment="Bottom" Margin="6,0,0,6" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="lbl_imageSize" Text="dummy" Foreground="White" Height="16" Width="128"/>
+                <TextBlock x:Name="lbl_zoom" Text="dummy" Foreground="White" Height="16" Width="128"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

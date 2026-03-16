@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="NovaBrush._02_BrushSys.ToolWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="288" d:DesignWidth="64" Background="Black">
+    <Grid>
+        <Rectangle x:Name="wnd_toolWindow" Stroke="Black" Width="64" Fill="#FF1E1E1E"/>
+        <Rectangle x:Name="wnd_toolWindowTip" 
+                   Stroke="#FF0F0F0F" 
+                   Width="64" 
+                   Fill="#FF0F0F0F" 
+                   Margin="0,0,0,272"
+                   MouseLeftButtonDown="Wnd_ToolWindowTip_MouseLeftButtonDown" RenderTransformOrigin="0,1"/>
+        <Button x:Name="btn_Pencil" Content="✏️"
+            Tag="Pencil" 
+            Style="{StaticResource NovaToolButton}" Focusable="False" Margin="5,21,35,243" Width="24" Height="24" Click="ToolButton_Click"/>
+        <Button x:Name="btn_Eraser" Content="🧽"
+    Tag="Eraser" 
+    Style="{StaticResource NovaToolButton}" Focusable="False" Margin="34,21,6,243" Width="24" Height="24" Click="ToolButton_Click"/>
+        <Button x:Name="btn_Brush" Content="🖌️" Tag="Brush" Style="{StaticResource NovaToolButton}" Focusable="False" Margin="5,50,35,214" Width="24" Height="24" Click="ToolButton_Click"/>
+
+    </Grid>
+
+</UserControl>
