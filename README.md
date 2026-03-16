@@ -7,14 +7,14 @@ This is Module 3 of NovaBrush, a lightweight, responsive pixel editor built with
 ## What It Does
 
 **Hotkeys**  
-- `Ctrl+O` — Open file
-- `Ctrl+S` — Save file
-- `P` — Switch to Pencil
-- `B` — Switch to Brush
-- `E` — Switch to Eraser
-- `F4` — Toggle Anti-Aliasing
-- `F5` — Toggle Color Picker window
-- `F6` — Toggle Tool window
+- `Ctrl+O` - Open file
+- `Ctrl+S` - Save file
+- `P` - Switch to Pencil
+- `B` - Switch to Brush
+- `E` - Switch to Eraser
+- `F4` - Toggle Anti-Aliasing
+- `F5` - Toggle Color Picker window
+- `F6` - Toggle Tool window
 
 **Color Picker Window** 
 - RGBA sliders for Red, Green, Blue, and Hardness (Alpha)
