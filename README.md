@@ -6,7 +6,7 @@ This is Module 3 of NovaBrush, a lightweight, responsive pixel editor built with
 
 ## What It Does
 
-**Smart Brush Engine**  
+**Hotkeys**  
 - `Ctrl+O` — Open file
 - `Ctrl+S` — Save file
 - `P` — Switch to Pencil
@@ -15,6 +15,12 @@ This is Module 3 of NovaBrush, a lightweight, responsive pixel editor built with
 - `F4` — Toggle Anti-Aliasing
 - `F5` — Toggle Color Picker window
 - `F6` — Toggle Tool window
+
+**Color Picker Window** 
+- RGBA sliders for Red, Green, Blue, and Hardness (Alpha)
+- Live color preview swatch updates as you drag
+- Draggable floating window, grab the top bar and move it anywhere on the canvas
+- Clamped to window bounds so it can't be dragged off screen
 
 ---
 
