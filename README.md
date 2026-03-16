@@ -2,7 +2,7 @@
 Hotkeys, Color Picker, and floating UI windows!
 This is Module 3 of NovaBrush, a lightweight, responsive pixel editor built with C#.
 
-<img src="https://raw.githubusercontent.com/eduardodias2002/eduardodias2002.github.io/refs/heads/dump/img/testpix.webp">
+<img src="https://raw.githubusercontent.com/eduardodias2002/eduardodias2002.github.io/refs/heads/dump/img/scrnsh2.webp">
 
 ## What It Does
 
